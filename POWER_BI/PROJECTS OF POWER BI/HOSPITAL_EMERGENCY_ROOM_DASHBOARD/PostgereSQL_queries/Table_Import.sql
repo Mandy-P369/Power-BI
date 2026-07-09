@@ -76,7 +76,10 @@ dense_rank() over(order by total_patients) as "dense_rank",
 lag(total_patients,1) over(order by total_patients)
 from patient_shift ;
 
-select 
+select min(patient_admission_time) from hdata ;
+select max(patient_admission_time) from hdata ;
+select distinct patient_admission_time as pat from hdata order by pat asc ;
+select distinct patient_admission_date as pdt from hdata order by pdt ;
 
 
 
